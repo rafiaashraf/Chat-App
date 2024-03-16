@@ -2,10 +2,12 @@ const cors = require("cors")
 const express = require("express");
 const dotenv = require("dotenv")
 const { chats } = require("./data/data");
+const connectDB = require("./config/db");
 
 const app = express();
 app.use(cors());
 dotenv.config();
+connectDB();
 
 app.get('/', (req, res) => {
     res.send("Welcome to Chat App");
