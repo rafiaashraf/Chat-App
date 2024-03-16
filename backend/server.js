@@ -3,6 +3,7 @@ const express = require("express");
 const dotenv = require("dotenv")
 const { chats } = require("./data/data");
 const connectDB = require("./config/db");
+const colors = require('colors');
 
 const app = express();
 app.use(cors());
@@ -25,4 +26,4 @@ app.get('/api/chat/:id', (req, res) => {
 })
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
+app.listen(PORT, console.log(`Server started on PORT ${PORT}`.yellow.bold));
